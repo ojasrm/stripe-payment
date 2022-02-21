@@ -20,7 +20,7 @@ app.post("/payment", (req, res) => {
 	console.log("Price ", product.price);
 	const idempotencyKey = uuid.v4();
 
-	return stripe.customer
+	return stripe.customers
 		.create({
 			email: token.email,
 			source: token.id,
